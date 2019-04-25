@@ -1,0 +1,1 @@
+../vim-allomancer/colors/allomancer.vim

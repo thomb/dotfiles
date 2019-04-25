@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/thomasbaxter/code/thomas-baxter-writing-site/schemas'
+let g:netrw_dirhist_2='/Users/thomasbaxter/code/thomas-baxter-writing-site/src/actions'
+let g:netrw_dirhist_3='/Users/thomasbaxter/code/thomas-baxter-writing-site/src'
+let g:netrw_dirhist_4='/Users/thomasbaxter/code/thomas-baxter-writing-site/src/types'
+let g:netrw_dirhist_5='/Users/thomasbaxter/code/thomas-baxter-writing-site/node_modules/react-scripts/config'
+let g:netrw_dirhist_6='/Users/thomasbaxter/code/thomas-baxter-writing-site/public/pdfjs-2.1.266-dist'
+let g:netrw_dirhist_7='/Users/thomasbaxter/git/dotfiles'
+let g:netrw_dirhist_8='/Users/thomasbaxter/git/dotfiles/.work_bash/devOps'

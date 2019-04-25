@@ -66,6 +66,7 @@ PACKAGES=(
     pkg-config
     python
     python3
+    reattach-to-user-namespace
     rename
     ssh-copy-id
     terminal-notifier

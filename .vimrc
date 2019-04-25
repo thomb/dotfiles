@@ -3,8 +3,6 @@ set nocompatible
 filetype off
 source ~/.vim/abbreviations.vim
 execute pathogen#infect()
-execute pathogen#helptags()
-execute pathogen#incubate()
 syntax on
 let mapleader=","
 " Quickly edit/reload the vimrc file
@@ -41,24 +39,21 @@ set nobackup
 set textwidth=150
 set colorcolumn=+1
 
-highlight ColorColumn term=reverse ctermbg=1 guibg=LightRed
+highlight ColorColumn term=reverse ctermbg=1 guibg=LightBlue
 augroup colorcolumn
     autocmd!
-    autocmd ColorScheme solarized highlight ColorColumn term=reverse ctermbg=1 guibg=LightRed
+    autocmd ColorScheme mustang highlight ColorColumn term=reverse ctermbg=1 guibg=Red
 augroup end
 
 set noswapfile
 set cursorline cursorcolumn
 "set nofoldenable
 set background=dark
-try 
-	colorscheme solarized 
-catch
-	colorscheme mustang
-endtry
 
 nnoremap / /\v
 vnoremap / /\v
+
+colorscheme mustang
 color mango
 noremap <leader>enc ysiw
 noremap <leader>i :set list!<CR>

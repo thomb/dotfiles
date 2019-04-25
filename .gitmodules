@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/fzf.vim"]
 	path = .vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule ".vim/vim-allomancer"]
+	path = .vim/vim-allomancer
+	url = https://github.com/Nequo/vim-allomancer.git

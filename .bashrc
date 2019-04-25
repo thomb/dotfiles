@@ -6,6 +6,8 @@ export PATH="$HOME/go/bin:$PATH"
 export PS1="\n[\[$(tput sgr0)\]\[\033[38;5;220m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]] \[$(tput sgr0)\]\[\033[38;5;82m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n[\[$(tput sgr0)\]\[\033[38;5;200m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;171m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$ \[$(tput sgr0)\]"
 export GOPATH=$HOME/go
 
+[ -f ~/.bash/cumul8/react.bash ] && source ~/.bash/cumul8/react.bash
+
 # Personal Plugin Related 
 [ -f ~/.bash/fzf.bash ] && source ~/.bash/fzf.bash
 [ -f ~/.bash/prettyping.bash ] && source ~/.bash/prettyping.bash

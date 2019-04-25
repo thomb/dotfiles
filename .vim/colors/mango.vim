@@ -1,1 +1,1 @@
-mango.vim/colors/mango.vim
+../mango.vim/colors/mango.vim

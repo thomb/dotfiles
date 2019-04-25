@@ -20,6 +20,7 @@
 
 echo "Starting bootstrapping..."
 GITHUB_LOCATION="~/github"
+DOTFILES_LOCATION="$GITHUB_LOCATION/dotfiles"
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
@@ -158,7 +159,6 @@ chmod +x ~/$GITHUB_LOCATION/prettyping/prettyping
 echo "Configuring Environment for `trbaxter`..."
 [[ ! -d ~/$GITHUB_LOCATION ]] && mkdir ~/$GITHUB_LOCATION
 
-DOTFILES_LOCATION="$GITHUB_LOCATION/dotfiles"
 [[ ! -d ~/$DOTFILES_LOCATION ]] && mkdir ~/$DOTFILES_LOCATION
 git clone https://github.com/thomb/dotfiles.git ~/$DOTFILES_LOCATION
 pushd $DOTFILES_LOCATION
@@ -168,20 +168,16 @@ popd
 
 
 echo "Creating folder structure..."
-# NOTE: 
-#	* create `.personal_bash` and `.work_bash` and symlink them appropriately
-#	* Generate, write and symlink a `.bashrc` to import `main.sh` from both of those folders
-#	* link `.vim` and `.vimrc` and run `git submodule init -r`
 [[ ! -d ~/.work_bash ]] && ln -s $DOTFILES_LOCATION/work_bash ~/.work_bash
 [[ ! -d ~/.trbaxter ]] && ln -s $DOTFILES_LOCATION/trbaxter ~/.trbaxter
 [[ ! -d ~/.vim ]] && ln -s $DOTFILES_LOCATION/.vim ~/.vim
 [[ ! -d ~/.vimrc ]] && ln -s $DOTFILES_LOCATION/.vimrc ~/.vimrc
 [[ ! -d ~/.tmux.conf.local ]] && ln -s $DOTFILES_LOCATION/.tmux.conf ~/.tmux.conf.local
 
-
+echo "Creating `.bash_profile`..."
 if [[ ! -d ~/.bash_profile ]]; then 
 	
-	cat >~/.bash_profile << EOL
+	cat > ~/.bash_profile << EOL
 
 export LOCAL_GITHUB="$HOME/github"
 if [ -f ~/.trbaxter/main.bash ]; then
@@ -193,6 +189,6 @@ if [ -f ~/.work_bash/main.bash ]; then
 fi
 
 EOL
-	
+fi
 
 echo "Bootstrapping complete!"

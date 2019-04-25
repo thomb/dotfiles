@@ -1,1 +1,1 @@
-alias ping="~/bin/prettyping --nolegend"
+alias ping="~/$LOCAL_GITHUB/prettyping --nolegend"

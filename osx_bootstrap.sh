@@ -19,6 +19,7 @@
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
 echo "Starting bootstrapping..."
+GITHUB_LOCATION="~/github"
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
@@ -52,6 +53,7 @@ PACKAGES=(
     autojump
 	docker
     ffmpeg
+    fzf
     gettext
     git
     imagemagick
@@ -98,13 +100,14 @@ echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
 
 # echo "Installing fonts..."
-# brew tap caskroom/fonts
-# FONTS=(
-#    font-inconsolidata
-#    font-roboto
-#    font-clear-sans
-# )
-# brew cask install ${FONTS[@]}
+brew tap caskroom/fonts
+FONTS=(
+    font-inconsolidata
+	font-droid-sans-mono-for-powerline.rb
+    font-roboto
+   	font-clear-sans
+)
+brew cask install ${FONTS[@]}
 # 
 # echo "Installing Python packages..."
 # PYTHON_PACKAGES=(
@@ -145,9 +148,13 @@ echo "Cloning `.tmux.conf`..."
 git clone https://github.com/gpakosz/.tmux.git  ~/$GITHUB_LOCATION/.tmux
 ln -s -f $GITHUB_LOCATION/.tmux/.tmux.conf
 
+# Clone prettyping
+echo "Cloning `prettyping`..."
+git clone https://github.com/denilsonsa/prettyping.git ~/$GITHUB_LOCATION/prettyping
+chmod +x ~/$GITHUB_LOCATION/prettyping/prettyping
+
 # Clone thomb/dotfiles
 echo "Configuring Environment for `trbaxter`..."
-GITHUB_LOCATION="~/github"
 [[ ! -d ~/$GITHUB_LOCATION ]] && mkdir ~/$GITHUB_LOCATION
 
 DOTFILES_LOCATION="$GITHUB_LOCATION/dotfiles"

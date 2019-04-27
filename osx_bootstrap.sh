@@ -179,7 +179,7 @@ if [[ ! -d ~/.bash_profile ]]; then
 	cat > ~/.bash_profile << EOL
 
 export LOCAL_GITHUB="$HOME/github"
-export HOMEBREW_PACKAGES=$PACKAGES
+export HOMEBREW_PACKAGES=($PACKAGES[@])
 if [ -f ~/.trbaxter/main.bash ]; then
 	source ~/.trbaxter/main.bash
 fi

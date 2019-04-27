@@ -48,34 +48,34 @@ brew install findutils
 brew install bash
 
 PACKAGES=(
-    ack
-    autoconf
-    automake
-    autojump
+	ack
+	autoconf
+	automake
+	autojump
 	docker
-    ffmpeg
-    fzf
-    gettext
-    git
-    imagemagick
-    libjpeg
-    libmemcached 
-    markdown
+	ffmpeg
+	fzf
+	gettext
+	git
+	imagemagick
+	libjpeg
+	libmemcached 
+	markdown
 	mongodb-community
-    npm
+	npm
 	node
-    pkg-config
-    python
-    python3
-    reattach-to-user-namespace
-    rename
-    ssh-copy-id
-    terminal-notifier
-    the_silver_searcher
-    tmux
-    tree
-    vim
-    wget
+	pkg-config
+	python
+	python3
+	reattach-to-user-namespace
+	rename
+	ssh-copy-id
+	terminal-notifier
+	the_silver_searcher
+	tmux
+	tree
+	vim
+	wget
 )
 
 echo "Installing packages..."
@@ -88,14 +88,14 @@ echo "Installing cask..."
 brew install caskroom/cask/brew-cask
 
 CASKS=(
-    firefox
+	firefox
 	docker-toolbox
-    google-chrome
-    slack
-    vagrant
-    vagrant-manager
-    virtualbox
-    vlc
+	google-chrome
+	slack
+	vagrant
+	vagrant-manager
+	virtualbox
+	vlc
 )
 
 echo "Installing cask apps..."
@@ -104,10 +104,10 @@ brew cask install ${CASKS[@]}
 # echo "Installing fonts..."
 brew tap caskroom/fonts
 FONTS=(
-    font-inconsolidata
+	font-inconsolidata
 	font-droid-sans-mono-for-powerline.rb
-    font-roboto
-   	font-clear-sans
+	font-roboto
+	font-clear-sans
 )
 brew cask install ${FONTS[@]}
 # 
@@ -121,8 +121,8 @@ brew cask install ${FONTS[@]}
 
 echo "Installing Ruby gems"
 RUBY_GEMS=(
-    bundler
-    filewatcher
+	bundler
+	filewatcher
 	tmuxinator
 )
 sudo gem install ${RUBY_GEMS[@]}
@@ -176,7 +176,6 @@ echo "Creating folder structure..."
 
 echo "Creating `.bash_profile`..."
 if [[ ! -d ~/.bash_profile ]]; then 
-	
 	cat > ~/.bash_profile << EOL
 
 export LOCAL_GITHUB="$HOME/github"

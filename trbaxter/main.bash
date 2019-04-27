@@ -7,8 +7,8 @@
 export CUSTOM_SCRIPT_LOCATION="$HOME/.trbaxter"
 export TMUXINATOR_CONFIG_LOCATION="$HOME/.trbaxter/tmuxinator"
 export WEB_BASE="$HOME/trbaxter"
-GITHUB_LOCATION="$HOME/github"
-DOTFILES_LOCATION="$GITHUB_LOCATION/dotfiles"
+export GITHUB_LOCATION="$HOME/github"
+export DOTFILES_LOCATION="$GITHUB_LOCATION/dotfiles"
 
 HOMEBREW_PACKAGES=(
 	ack

@@ -6,9 +6,8 @@ alias ll="ls -alh"
 src_env() {
 	source ~/.bashrc
 }
+
 update_env () {
-
-
 	echo "Updating Homebrew..."
 	brew update
 

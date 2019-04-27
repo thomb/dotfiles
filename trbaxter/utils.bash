@@ -12,7 +12,7 @@ update_env () {
 	brew update
 
 	echo "Updating Homebrew packages..."
-	brew brew upgrade ${HOMEBREW_PACKAGES[@]}
+	brew upgrade ${HOMEBREW_PACKAGES[@]}
 
 	echo "Cleaning up Homebrew..."
 	brew cleanup

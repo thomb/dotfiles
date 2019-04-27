@@ -9,37 +9,6 @@ export TMUXINATOR_CONFIG_LOCATION="$HOME/.trbaxter/tmuxinator"
 export WEB_BASE="$HOME/trbaxter"
 export DOTFILES_LOCATION="$LOCAL_GITHUB/dotfiles"
 
-HOMEBREW_PACKAGES=(
-	ack
-	autoconf
-	automake
-	autojump
-	docker
-	ffmpeg
-	fzf
-	gettext
-	git
-	imagemagick
-	libjpeg
-	libmemcached 
-	markdown
-	mongodb-community
-	npm
-	node
-	pkg-config
-	python
-	python3
-	reattach-to-user-namespace
-	rename
-	ssh-copy-id
-	terminal-notifier
-	the_silver_searcher
-	tmux
-	tree
-	vim
-	wget
-)
-
 
 # Include all of the react  related scripts
 if [ -f $CUSTOM_SCRIPT_LOCATION/react/main.bash ]; then

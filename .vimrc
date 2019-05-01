@@ -167,3 +167,4 @@ let g:ale_javascript_flow_executable = '/usr/local/bin/flow'
 set exrc
 set secure
 set rtp+=/usr/local/opt/fzf
+com! FormatJSON %!python -m json.tool

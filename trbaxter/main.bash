@@ -9,6 +9,12 @@ export TMUXINATOR_CONFIG_LOCATION="$HOME/.trbaxter/tmuxinator"
 export WEB_BASE="$HOME/trbaxter"
 export DOTFILES_LOCATION="$LOCAL_GITHUB/dotfiles"
 
+# Include the basic environment
+if [ -f $CUSTOM_SCRIPT_LOCATION/base.bash ]; then
+	source $CUSTOM_SCRIPT_LOCATION/base.bash;
+else
+	echo "Cannot find: $CUSTOM_SCRIPT_LOCATION/base.bash";
+fi
 
 # Include all of the react  related scripts
 if [ -f $CUSTOM_SCRIPT_LOCATION/react/main.bash ]; then
@@ -38,7 +44,14 @@ else
 	echo "Cannot find: $CUSTOM_SCRIPT_LOCATION/git/main.bash";
 fi
 
-# Include all of the git related scripts
+# Include all of the tmux related scripts
+if [ -f $CUSTOM_SCRIPT_LOCATION/tmux/main.bash ]; then
+	source $CUSTOM_SCRIPT_LOCATION/tmux/main.bash;
+else
+	echo "Cannot find: $CUSTOM_SCRIPT_LOCATION/tmuxinator/main.bash";
+fi
+
+# Include all of the tmuxinator related scripts
 if [ -f $CUSTOM_SCRIPT_LOCATION/tmuxinator/main.bash ]; then
 	source $CUSTOM_SCRIPT_LOCATION/tmuxinator/main.bash;
 else
@@ -46,7 +59,7 @@ else
 fi
 
 
-# Include all of the git related scripts
+# Include all of the utils related scripts
 if [ -f $CUSTOM_SCRIPT_LOCATION/utils.bash ]; then
 	source $CUSTOM_SCRIPT_LOCATION/utils.bash;
 else

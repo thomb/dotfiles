@@ -57,6 +57,7 @@ PACKAGES=(
 	fzf
 	gettext
 	git
+	htop
 	imagemagick
 	libjpeg
 	libmemcached 
@@ -146,17 +147,17 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Clone .tmux.conf
-echo "Cloning `.tmux.conf`..."
+echo "Cloning .tmux.conf..."
 git clone https://github.com/gpakosz/.tmux.git  ~/$GITHUB_LOCATION/.tmux
 ln -s -f $GITHUB_LOCATION/.tmux/.tmux.conf
 
 # Clone prettyping
-echo "Cloning `prettyping`..."
+echo "Cloning prettyping..."
 git clone https://github.com/denilsonsa/prettyping.git ~/$GITHUB_LOCATION/prettyping
 chmod +x ~/$GITHUB_LOCATION/prettyping/prettyping
 
 # Clone thomb/dotfiles
-echo "Configuring Environment for `trbaxter`..."
+echo "Configuring Environment for trbaxter..."
 [[ ! -d ~/$GITHUB_LOCATION ]] && mkdir ~/$GITHUB_LOCATION
 
 [[ ! -d ~/$DOTFILES_LOCATION ]] && mkdir ~/$DOTFILES_LOCATION
@@ -174,7 +175,7 @@ echo "Creating folder structure..."
 [[ ! -d ~/.vimrc ]] && ln -s $DOTFILES_LOCATION/.vimrc ~/.vimrc
 [[ ! -d ~/.tmux.conf.local ]] && ln -s $DOTFILES_LOCATION/.tmux.conf ~/.tmux.conf.local
 
-echo "Creating `.bash_profile`..."
+echo "Creating .bash_profile..."
 if [[ ! -d ~/.bash_profile ]]; then 
 	cat > ~/.bash_profile << EOL
 

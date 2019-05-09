@@ -15,5 +15,3 @@ export GOPATH=$HOME/go
 
 # NOTE: Check on this one
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-

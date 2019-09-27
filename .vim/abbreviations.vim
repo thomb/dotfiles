@@ -1,16 +1,3 @@
-
-""" JS formating helper
-abbreviate if( if (
-abbreviate ){ ) {
-abbreviate }else{ } else {
-abbreviate appT appendTo
-abbreviate function( function (
-abbreviate function() function ()
-abbreviate switch( switch (
-abbreviate switch() switch ()
-""" CUSTOM Shortcuts for JS
-abbreviate uiE uiElements
-abbreviate reP reportParameters
 """ type-o fixin's
 abbreviate backgroudn background
 abbreviate rbeak break
@@ -31,6 +18,8 @@ abbreviate conatinaer container
 abbreviate conatiner container
 abbreviate cointainer container
 abbreviate contaioner container
+abbreviate cont const
+abbreviate cosnt const
 abbreviate eahc each
 abbreviate echa each
 abbreviate extedn extend

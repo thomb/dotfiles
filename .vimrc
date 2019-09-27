@@ -40,7 +40,6 @@ filetype plugin indent on
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
-" On pressing tab, insert 4 spaces
 set expandtab
 
 highlight ColorColumn term=reverse ctermbg=1 guibg=LightBlue
@@ -80,8 +79,8 @@ inoremap <leader>p <esc>pA
 noremap <leader><space> :noh<CR>
 
 " Javacsript hlpers
-nnoremap <leader>lov yiwoconsole.log();<esc>hhp
-nnoremap <leader>lob oconsole.log();<esc>hhp
+nnoremap <leader>lov yiwoconsole.log();<esc>hhpa,<esc>p0f(a'<esc>f,i'<esc>
+nnoremap <leader>lob oconsole.log();<esc>hhpa,<esc>p0f(a'<esc>f,i'<esc>
 vnoremap <leader>loc yoconsole.log();<esc>hhp
 nnoremap <leader>retv yiworeturn ;<esc>hp
 nnoremap <leader>nobj o:{<esc>o<esc>o},<esc>2ki
@@ -125,9 +124,6 @@ nnoremap <leader>jsi diwo    @param        {Integer}        <esc>p
 
 nnoremap <leader>apg o api.getalt('', {<cr><backspace>filters: [],<cr><tab>columns: []<cr>}, function (results, err) {<cr>if (err) {<cr>this.widget.logError({<cr>err: err, <cr>message: '', <cr>type: 'error',<cr>notify: true<cr>});<cr>}<cr>}.bind(this));<esc>
 
-let g:javascript_enable_domhtmlcss = 1
-let g:javascript_ignore_javaScriptdoc = 1
-let g:javascript_plugin_flow = 1
 
 
 """ airline
@@ -155,20 +151,24 @@ let g:ale_set_quickfix = 0
 let g:ale_set_loclist = 0
 
 let g:ale_linters = {
-\   'javascript': ['eslint', 'flow'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint', 'tsserver', 'tslint'],
 \   'less': ['stylelint'],
+\   'css': ['stylelint'],
 \   'yaml': ['yamllint'],
 \}
 
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
-\   'css': ['eslint'],
+\   'typescript': ['eslint', 'tslint'],
+\   'css': ['stylelint'],
 \}
 let g:ale_fix_on_save = 1
 
-let g:ale_javascript_flow_executable = '/usr/local/bin/flow'
+let g:ale_javascript_eslint_executable = '/usr/local/bin/eslint'
 
 set exrc
 set secure
 set rtp+=/usr/local/opt/fzf
 com! FormatJSON %!python -m json.tool
+:inoremap <leader>ad <C-R>=strftime("%m/%d/%y")<CR>

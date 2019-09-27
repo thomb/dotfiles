@@ -22,3 +22,7 @@ update_env () {
 	git submodule update --init --recursive
 	popd
 }
+
+file_count () {
+    find . -type f | wc -l
+}

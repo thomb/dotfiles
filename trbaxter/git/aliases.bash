@@ -12,37 +12,10 @@ gcam () {
 	git commit -am "$1"
 }
 
-newb () {
-	ticket=$1;
-    if [ -z $1 ]; then
-        echo "Please provide a ticket number"
-        read ticket
-    fi
-
-    echo "bug or task?"
-    read branch;
-    if [ $branch == "bug" ]; then
-        bugbranch $ticket
-    else
-        taskbranch $ticket
-    fi
+gdel () {
+    git branch -d $1
 }
 
-bugbranch () {
-	echo "Describe what you are fixing:"
-	read commitMessage;
-	commitMessage=${commitMessage// /-}
-    git checkout master;
-    git checkout -b bugfix-thomas-$1-$commitMessage
+gfdel () {
+    git branch -D $1
 }
-
-
-taskbranch () {
-	echo "Describe what you are working on:"
-	read commitMessage;
-	commitMessage=${commitMessage// /-}
-    git checkout master;
-    git checkout -b task-thomas-$1-$commitMessage
-}
-
-

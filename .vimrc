@@ -83,48 +83,11 @@ nnoremap <leader>lov yiwoconsole.log();<esc>hhpa,<esc>p0f(a'<esc>f,i'<esc>
 nnoremap <leader>lob oconsole.log();<esc>hhpa,<esc>p0f(a'<esc>f,i'<esc>
 vnoremap <leader>loc yoconsole.log();<esc>hhp
 nnoremap <leader>retv yiworeturn ;<esc>hp
-nnoremap <leader>nobj o:{<esc>o<esc>o},<esc>2ki
-nnoremap <leader>tne oif (err) {<esc>othis.widget.logError({<cr>err: err, <cr>message: '', <cr>type: 'error',<cr>notify: true<cr>});<esc>o}<esc>4kf'a
-nnoremap <leader>swl othis.widget.showLoader();<esc>
-nnoremap <leader>hwl othis.widget.hideLoader();<esc>
 nnoremap <leader>decp oconst {} = this.props;<esc>0f{a
 nnoremap <leader>decs oconst {} = this.state;<esc>0f{a
 nnoremap <leader>as oexpect(false).toBe(true);
 nnoremap <leader>tst oit("should ", () => {<esc>o});<esc>kfdla
 nnoremap <leader>jdc odescribe("", () => {<esc>o});<esc>kf"a
-
-
-
-" PYTHON HELPERS
-nnoremap <leader>rec y<esc>oraise Exception()<esc>hp
-nnoremap <leader>reb <esc>oraise Exception()<esc>hp
-nnoremap <leader>rev yiw<esc>oraise Exception()<esc>hp
-
-""" BACKBONE VIEW
-nnoremap <leader>bbv o:Backbone.View.extend({<esc>oevents: {<esc>o},<esc>oinitialize: {<esc>o},<esc>orender: {<esc>}o}),<esc>
-
-""" JSDOC function declation
-nnoremap <leader>jsd 0yyPI/** <CR>    @method<space><esc>0f:Da<CR><space><space><space><space>@memberof<space><CR><esc>0f*a<space><esc>p0f:df(0f)d$0f*a<space><esc>$a<CR><CR><space><space><space><space>@desc<esc>o<backspace><backspace><backspace><backspace><backspace><cr>/<esc>
-nnoremap <leader>jsf 0yyPf.ld0diwO/** <cr>    @method <esc>pj0df(f)d$I<esc>d0d$ko<backspace>        @memberof <esc>o<backspace><backspace><cr><cr>/<esc>ka<space><esc>p
-nnoremap <leader>jaf 0yyPI/** <CR> <CR> @method<SPACE><ESC>0f<space>i<cr>df{A <CR> <ESC>p0f(s<esc>f)D<esc>o/<esc>k0f<space>
-nnoremap <leader>jda 0yyPI/** <CR><cr><esc>0f(s<cr><esc>f)s<cr>**/<esc>
-
-
-
-""" JSDOC param
-nnoremap <leader>jsp diwo<backspace>    @param        {}        <esc>p0f{a
-nnoremap <leader>jsr diwo<backspace>    @property        {}        <esc>p0f{a
-nnoremap <leader>jsc diwo    @param        {Function}       <esc>p
-nnoremap <leader>jso diwo    @param        {Object}         <esc>p
-nnoremap <leader>jsa diwo    @param        {Array}          <esc>p
-nnoremap <leader>jse diwo    @param        {Event}          <esc>p
-nnoremap <leader>jss diwo    @param        {String}         <esc>p
-nnoremap <leader>jsb diwo    @param        {Boolean}        <esc>p
-nnoremap <leader>jsi diwo    @param        {Integer}        <esc>p
-
-nnoremap <leader>apg o api.getalt('', {<cr><backspace>filters: [],<cr><tab>columns: []<cr>}, function (results, err) {<cr>if (err) {<cr>this.widget.logError({<cr>err: err, <cr>message: '', <cr>type: 'error',<cr>notify: true<cr>});<cr>}<cr>}.bind(this));<esc>
-
-
 
 """ airline
 let g:airline_detect_whitespace=0

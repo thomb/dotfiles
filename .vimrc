@@ -8,8 +8,6 @@ let mapleader=","
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-filetype plugin indent on
-filetype plugin on
 set encoding=utf-8
 set mouse-=a
 set nowrap        		" don't wrap lines
@@ -114,24 +112,30 @@ let g:ale_set_quickfix = 0
 let g:ale_set_loclist = 0
 
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['eslint', 'tsserver', 'tslint'],
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'tslint', 'prettier'],
 \   'less': ['stylelint'],
 \   'css': ['stylelint'],
 \   'yaml': ['yamllint'],
 \}
 
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\   'typescript': ['eslint', 'tslint'],
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'tslint', 'prettier'],
 \   'css': ['stylelint'],
 \}
 let g:ale_fix_on_save = 1
 
 let g:ale_javascript_eslint_executable = '/usr/local/bin/eslint'
 
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END
+
+
 set exrc
 set secure
-set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/bin/fzf
 com! FormatJSON %!python -m json.tool
 :inoremap <leader>ad <C-R>=strftime("%m/%d/%y")<CR>

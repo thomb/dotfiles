@@ -189,6 +189,8 @@ if [ -f ~/.work_bash/main.bash ]; then
 	source ~/.work_bash/main.bash
 fi
 
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 EOL
 fi
 

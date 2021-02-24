@@ -5,14 +5,10 @@ parse_git_branch() {
 }
 
 
-get_external_ip () {
-    dig +short myip.opendns.com @resolver1.opendns.com
-}
-
 export PATH="/usr/local/bin:$PATH" 
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
-export PS1='\n[External IP: $(get_external_ip)] [\[$(tput sgr0)\]\[\033[38;5;220m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\]] $(parse_git_branch) $(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]\n[\[$(tput sgr0)\]\[\033[38;5;200m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;171m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\]:\[\033[38;5;82m\]\w\[$(tput sgr0)\]]\\$ '
+export PS1='\n[\[$(tput sgr0)\]\[\033[38;5;220m\]\D{%F %T}$(tput sgr0)\]\[\033[38;5;15m\]] $(parse_git_branch) $(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]\n[\[$(tput sgr0)\]\[\033[38;5;200m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;171m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\]:\[\033[38;5;82m\]\w\[$(tput sgr0)\]]\\$ '
 export GOPATH=$HOME/go
 
 
